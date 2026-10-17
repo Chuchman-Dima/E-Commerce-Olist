@@ -1,0 +1,40 @@
+-- Ознайомлення з таблицями
+
+-- 1. Кількість рядків у кожній таблиці
+SELECT 'customers' AS tbl, COUNT(*) AS row_count FROM olist_customers_dataset
+UNION ALL SELECT 'geolocation',          COUNT(*) FROM olist_geolocation_dataset
+UNION ALL SELECT 'order_items',          COUNT(*) FROM olist_order_items_dataset
+UNION ALL SELECT 'payments',             COUNT(*) FROM olist_order_payments_dataset
+UNION ALL SELECT 'reviews',              COUNT(*) FROM olist_order_reviews_dataset
+UNION ALL SELECT 'orders',               COUNT(*) FROM olist_orders_dataset
+UNION ALL SELECT 'products',             COUNT(*) FROM olist_products_dataset
+UNION ALL SELECT 'sellers',              COUNT(*) FROM olist_sellers_dataset
+UNION ALL SELECT 'category_translation', COUNT(*) FROM product_category_name_translation;
+-- Висновок:
+-- geolocation  1000163
+-- order_items  112650
+-- reviews  99224
+-- orders   99441
+-- customers    99441
+-- payments 103886
+-- products 32951
+-- sellers  3095
+-- category_translation 213
+
+
+-- 2. Перші рядки кожної таблиці (що означає один рядок?)
+SELECT * FROM olist_orders_dataset              LIMIT 5;
+SELECT * FROM olist_customers_dataset           LIMIT 5;
+SELECT * FROM olist_order_items_dataset         LIMIT 5;
+SELECT * FROM olist_order_payments_dataset      LIMIT 5;
+SELECT * FROM olist_order_reviews_dataset       LIMIT 5;
+SELECT * FROM olist_products_dataset            LIMIT 5;
+SELECT * FROM olist_sellers_dataset             LIMIT 5;
+SELECT * FROM olist_geolocation_dataset         LIMIT 5;
+SELECT * FROM product_category_name_translation LIMIT 5;
+
+-- 3. Типи колонок (дати мають бути timestamp, гроші numeric/double)
+SELECT table_name, column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = 'public'
+ORDER BY table_name, ordinal_position;
