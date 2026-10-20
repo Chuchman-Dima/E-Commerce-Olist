@@ -49,14 +49,6 @@ E-Commerce-Olist/
 └── README.md
 ```
 
-## Як відтворити
-
-1. Завантажте датасет з Kaggle і покладіть CSV у `data/raw/`.
-2. У PostgreSQL по черзі виконайте `sql/01` ... `sql/07`. Якщо проєкт лежить в іншій папці, змініть шляхи у файлах `02` і `07`.
-3. Встановіть залежності: `pip install pandas matplotlib jupyter`.
-4. Запустіть `notebooks/01_eda.ipynb`.
-5. Для дашборду підключіть Power BI до таблиць `orders_full` та `order_items_full` (напряму до PostgreSQL або з CSV у `data/processed/`).
-
 ## Правила розрахунків
 
 Однакові в SQL, ноутбуці й Power BI (докладно в `sql/05_build_analytics_tables.sql`):
