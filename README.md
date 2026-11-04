@@ -4,7 +4,7 @@
 
 **Головне питання проєкту:** як затримка доставки впливає на оцінки клієнтів і що з цим може зробити бізнес?
 
-**Стек:** PostgreSQL, SQL (JOIN, GROUP BY, CASE, підзапити), Python (pandas, matplotlib), Power BI.
+**Стек:** PostgreSQL, SQL (JOIN, GROUP BY, CASE, підзапити), Python (pandas, matplotlib).
 
 ## Ключові висновки
 
